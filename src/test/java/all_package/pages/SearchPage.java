@@ -1,6 +1,7 @@
 package all_package.pages;
 
 import all_package.utilities.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,8 +17,8 @@ public class SearchPage {
     private WebElement searchBtn;
 
     public void search(String term){
-        searchField.sendKeys(term);
-        searchBtn.click();
+        searchField.sendKeys(term, Keys.ENTER);
+
 
     }
 
