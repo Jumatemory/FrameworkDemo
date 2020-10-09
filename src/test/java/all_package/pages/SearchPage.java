@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchPage {
     public SearchPage(){
@@ -15,11 +16,19 @@ public class SearchPage {
     private WebElement searchField;
     @FindBy(name = "btnK")
     private WebElement searchBtn;
+    @FindBy(name = "p")
+    private WebElement yahooSrcField;
+    @FindBy(xpath = "//input[@type='submit']")
+    private WebElement yahooSrcBtn;
 
     public void search(String term){
         searchField.sendKeys(term, Keys.ENTER);
 
 
+    }
+    public void searchViaYahoo(String text){
+        yahooSrcField.sendKeys(text);
+        yahooSrcBtn.click();
     }
 
 
